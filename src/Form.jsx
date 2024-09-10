@@ -154,7 +154,7 @@ const Form = () => {
               applicable.
             </p>
             <label>
-              Full Name (as it appears on your International Passport):
+              Full Name (as it appears on your International Passport, SURNAME FIRST, THEN OTHER NAMES):
             </label>
             <input
               onChange={(e) => setName(e.target.value)}
