@@ -1,0 +1,40 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    border-radius: 0px;
+    width: 20rem;
+    /* width: 30%; */
+}
+
+.welcome-text {
+    row-gap: 1px;
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container button {
+    margin-top: 20px;
+    height: 3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    background-color: #1A7F64;
+    color: #FFF;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 130px;
+    margin-left: 30px;
+    margin-right: 30px;
+}

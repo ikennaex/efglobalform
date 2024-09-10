@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+.efglobalform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header {
+    font-weight: 800;
+    text-align: center;
+}
+
+.caution-txt {
+    margin-bottom: 0;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 15px;
+    max-width: 700px;
+    margin: 0 20px;
+}
+
+.sections {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+input {
+    font-size: 18px;
+    height: 2.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    /* width: 100%; */
+}
+
+.forms input[type= text]:focus  {
+    border: 2px solid #1A7F64;
+}
+
+.submit-btn {
+    width: 6rem;
+    height: 3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    background-color: #1A7F64;
+    color: #FFF;
+}
+
+.info-text {
+    color: #757575;
+    font-size: 14px;
+}
+
+input[type="radio"] {
+    height: 1.7rem;
+    width: 4rem; 
+    margin: 0;
+    /* margin-left: 5px; */
+}
+
+.radioinput-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+    /* align-items: center; */
+}
+
+.termsandconditioncheck {
+    display: flex;
+    align-items: center;
+}
+
+.termsandconditiontxt {
+    color: blue;
+}
+
+.p-warning {
+    color: red;
+    margin-top: 0;
+}
