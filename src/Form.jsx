@@ -13,8 +13,6 @@ const Form = () => {
   const [maritalStatus, setMaritalStatus] = useState("");
   const [employmentStatus, setEmploymentStatus] = useState("");
   const [occupation, setOccupation] = useState("");
-  const [employerName, setEmployerName] = useState("");
-  const [jobTitle, setJobTitle] = useState("");
   const [highestQualification, setHighestQualification] = useState("");
   const [institution1, setInstitution1] = useState("");
   const [yearsAttended1, setYearsAttended1] = useState("");
@@ -28,6 +26,30 @@ const Form = () => {
   const [yearsAttended3, setYearsAttended3] = useState("");
   const [course3, setCourse3] = useState("");
   const [qualification3, setQualification3] = useState("");
+  const [employerName1, setEmployerName1] = useState("");
+  const [employerAddress1, setEmployerAddress1] = useState("");
+  const [yearsEngaged1, setYearsEngaged1] = useState("");
+  const [postHeld1, setPostHeld1] = useState("");
+  const [employerName2, setEmployerName2] = useState("");
+  const [employerAddress2, setEmployerAddress2] = useState("");
+  const [yearsEngaged2, setYearsEngaged2] = useState("");
+  const [postHeld2, setPostHeld2] = useState("");
+  const [employerName3, setEmployerName3] = useState("");
+  const [employerAddress3, setEmployerAddress3] = useState("");
+  const [yearsEngaged3, setYearsEngaged3] = useState("");
+  const [postHeld3, setPostHeld3] = useState("");
+  const [studyLevel, setStudyLevel] = useState("");
+  const [courseChoice, setCourseChoice] = useState("");
+  const [preferredCountry, setPreferredCountry] = useState("");
+  const [travelHistory, setTravelHistory] = useState("");
+  const [denialHistory, setDenialHistory] = useState("");
+  const [tripBudget, setTripBudget] = useState("");
+  const [sponsor, setSponsor] = useState("");
+  const [travelPartner, setTravelPartner] = useState("");
+  const [travelPartnerList, setTravelPartnerList] = useState("");
+  const [sponsorProvide, setSponsorProvide] = useState("");
+  const [proofOfFunds, setProofOfFunds] = useState("");
+  const [howYouHeard, setHowYouHeard] = useState("");
 
   // for checkbox
   const [isChecked, setIsChecked] = useState(false);
@@ -47,8 +69,6 @@ const Form = () => {
       maritalstatus: maritalStatus,
       employmentstatus: employmentStatus,
       occupation: occupation,
-      employername: employerName,
-      jobtitle: jobTitle,
       highestqualification: highestQualification,
       institution1: institution1,
       yearsattended1: yearsAttended1,
@@ -62,90 +82,134 @@ const Form = () => {
       yearsattended3: yearsAttended3,
       course3: course3,
       qualification3: qualification3,
+      employerName1: employerName1,
+      employerAddress1: employerAddress1,
+      yearsEngaged1: yearsEngaged1,
+      postHeld1: postHeld1,
+      employerName2: employerName2,
+      employerAddress2: employerAddress2,
+      yearsEngaged2: yearsEngaged2,
+      postHeld2: postHeld2,
+      employerName3: employerName3,
+      employerAddress3: employerAddress3,
+      yearsEngaged3: yearsEngaged3,
+      postHeld3: postHeld3,
+      studyLevel: studyLevel,
+      courseChoice: courseChoice,
+      preferredCountry: preferredCountry,
+      travelHistory: travelHistory,
+      denialHistory: denialHistory,
+      tripBudget: tripBudget,
+      sponsor: sponsor,
+      travelPartner: travelPartner,
+      travelPartnerList: travelPartnerList,
+      sponsorProvide: sponsorProvide,
+      proofOfFunds: proofOfFunds,
+      howYouHeard: howYouHeard,
     };
 
     const response = axios
       .post(`${baseUrl}/answers`, data)
       .then((response) => {
-        console.log("request has been sent");
-        console.log(response);
-
         if (response.ok) {
+          console.log("data has been sent");
         }
       })
       .catch((err) => console.log(err));
-
-    console.log(response);
-
-    setName("");
-    setPhoneNumber("");
-    setEmail("");
-    setAddress("");
-    setDob("");
-    setMaritalStatus("");
-    setEmploymentStatus("");
-    setOccupation("");
-    setEmployerName("");
-    setJobTitle("");
-    setHighestQualification("");
-    setInstitution1("");
-    setYearsAttended1("");
-    setCourse1("");
-    setQualification1("");
-    setInstitution2("");
-    setYearsAttended2("");
-    setCourse2("");
-    setQualification2("");
-    setInstitution3("");
-    setYearsAttended3("");
-    setCourse3("");
-    setQualification3("");
-  };
+      
+      // if the data has been succesfuully sent then clear the boxes
+      setName("");
+      setPhoneNumber("");
+      setEmail("");
+      setAddress("");
+      setDob("");
+      setMaritalStatus("");
+      setEmploymentStatus("");
+      setOccupation("");
+      setHighestQualification("");
+      setInstitution1("");
+      setYearsAttended1("");
+      setCourse1("");
+      setQualification1("");
+      setInstitution2("");
+      setYearsAttended2("");
+      setCourse2("");
+      setQualification2("");
+      setInstitution3("");
+      setYearsAttended3("");
+      setCourse3("");
+      setQualification3("");
+      setEmployerName1("");
+      setEmployerAddress1("");
+      setYearsEngaged1("");
+      setPostHeld1("");
+      setEmployerName2("");
+      setEmployerAddress2("");
+      setYearsEngaged2("");
+      setPostHeld2("");
+      setEmployerName3("");
+      setEmployerAddress3("");
+      setYearsEngaged3("");
+      setPostHeld3("");
+      setStudyLevel("")
+      setCourseChoice("")
+      setPreferredCountry("")
+      setTravelHistory("")
+      setDenialHistory("")
+      setTripBudget("")
+      setSponsor("")
+      setTravelPartner("")
+      setTravelPartnerList("")
+      setSponsorProvide("")
+      setProofOfFunds("")
+      setHowYouHeard("")
+    };
 
   const payWithPaystack = (e) => {
     e.preventDefault();
     if (isChecked) {
-        try {
-          const paystack = new PaystackPop();
-          paystack.newTransaction({
-            key: "pk_test_137bbc49ca285f203537970ed5d0c78512b5543c",
-            amount: 10000 * 100,
-            email: email,
-            name: name,
-            onSuccess(transaction) {
-              submitForm();
-              let message = `Payment Complete! We have received your details and will get back to you shortly`;
-              alert(message);
-            },
-    
-            onCancel() {
-              alert("You have cancelled this transaction");
-            },
-          });
-        } catch (err) {
-          console.log(err);
-        }
+      try {
+        const paystack = new PaystackPop();
+        paystack.newTransaction({
+          key: "pk_live_5b8f64c4d8151f810a948bdd49eee5f3690419d7", // live key
+          amount: 10000 * 100,
+          email: email,
+          name: name,
+          onSuccess(transaction) {
+            submitForm();
+            let message = `Payment Complete! ${transaction.id}`;
+            alert(message);
+          },
 
+          onCancel() {
+            alert("You have cancelled this transaction");
+          },
+        });
+      } catch (err) {
+        console.log(err);
+      }
     } else {
-        return
+      return;
     }
   };
 
   return (
     <>
       <div className="efglobalform">
-        <h1 className="header">EF Global Travels Forms </h1>
-
         <div className="">
           <form className="forms" onSubmit={payWithPaystack}>
-            <p className="p-warning caution-txt">Caution: Please read all instructions before filling this form</p>
+            <h1 className="header">
+              EF Global Travels Study Abroad and Immigration Form{" "}
+            </h1>
+            <p className="p-warning caution-txt">
+              Caution: Please read all instructions before filling this form
+            </p>
             <p className="info-text">
               All columns of this Consultation Form must be completed in full to
               guarantee confirmation of your appointment booking and
               consultation slot. Please, kindly fill all columns with the most
               correct and accurate information.{" "}
             </p>
-
 
             <p>
               <span className="sections">SECTION A:</span>Please provide the
@@ -154,7 +218,8 @@ const Form = () => {
               applicable.
             </p>
             <label>
-              Full Name (as it appears on your International Passport, SURNAME FIRST, THEN OTHER NAMES):
+              Full Name (as it appears on your International Passport, SURNAME
+              FIRST, THEN OTHER NAMES):
             </label>
             <input
               onChange={(e) => setName(e.target.value)}
@@ -195,7 +260,7 @@ const Form = () => {
             <label>Marital Status:</label>
 
             <div className="radioinput-form">
-              <label>
+              <div>
                 <input
                   name="marital"
                   onChange={(e) => setMaritalStatus(e.target.value)}
@@ -204,9 +269,9 @@ const Form = () => {
                   value="Single"
                 />
                 Single
-              </label>
+              </div>
 
-              <label>
+              <div>
                 <input
                   name="marital"
                   onChange={(e) => setMaritalStatus(e.target.value)}
@@ -215,9 +280,9 @@ const Form = () => {
                   value="Married"
                 />
                 Married
-              </label>
+              </div>
 
-              <label>
+              <div>
                 <input
                   name="marital"
                   onChange={(e) => setMaritalStatus(e.target.value)}
@@ -226,9 +291,9 @@ const Form = () => {
                   value="Divorved"
                 />
                 Divorced
-              </label>
+              </div>
 
-              <label>
+              <div>
                 <input
                   name="marital"
                   onChange={(e) => setMaritalStatus(e.target.value)}
@@ -237,9 +302,9 @@ const Form = () => {
                   value="Seperated"
                 />
                 Separated
-              </label>
+              </div>
 
-              <label>
+              <div>
                 <input
                   name="marital"
                   onChange={(e) => setMaritalStatus(e.target.value)}
@@ -248,12 +313,12 @@ const Form = () => {
                   value="Others"
                 />
                 Others
-              </label>
+              </div>
             </div>
 
             <label>Employment Status:</label>
             <div className="radioinput-form">
-              <label>
+              <div>
                 <input
                   name="Employment"
                   type="radio"
@@ -262,9 +327,9 @@ const Form = () => {
                   value="Employed"
                 />
                 Employed
-              </label>
+              </div>
 
-              <label>
+              <div>
                 <input
                   name="Employment"
                   type="radio"
@@ -273,9 +338,9 @@ const Form = () => {
                   value="Self Employed"
                 />
                 Self Employed
-              </label>
+              </div>
 
-              <label>
+              <div>
                 <input
                   name="Employment"
                   type="radio"
@@ -284,7 +349,7 @@ const Form = () => {
                   value="Unemployed"
                 />
                 Unemployed
-              </label>
+              </div>
             </div>
 
             <label>Occupation:</label>
@@ -292,20 +357,6 @@ const Form = () => {
               type="text"
               onChange={(e) => setOccupation(e.target.value)}
               value={occupation}
-            />
-
-            <label>Company/Employer Name (for employed/Self employed):</label>
-            <input
-              type="text"
-              onChange={(e) => setEmployerName(e.target.value)}
-              value={employerName}
-            />
-
-            <label>Job Title/Designation:</label>
-            <input
-              type="text"
-              onChange={(e) => setJobTitle(e.target.value)}
-              value={jobTitle}
             />
 
             <p>
@@ -420,6 +471,443 @@ const Form = () => {
               value={qualification3}
             />
 
+            <p>
+              <span className="sections">
+                SECTION C - EMPLOYMENT HISTORY OR OCCUPATIONAL PROFILE:{" "}
+              </span>
+              Please provide your employment details below completely and
+              accurately. Make reference to your Resume or CV where applicable.
+              Please list all employers/companies or your own self employed
+              businesses (as applicable) that you have been engaged till date
+              (list the most recent first).
+            </p>
+
+            <label>Name of Employer 1:</label>
+            <input
+              type="text"
+              onChange={(e) => setEmployerName1(e.target.value)}
+              value={employerName1}
+            />
+
+            <label>Employer Address 1 (e.g Victoria Island, Lagos):</label>
+            <input
+              type="text"
+              onChange={(e) => setEmployerAddress1(e.target.value)}
+              value={employerAddress1}
+            />
+
+            <label>Year engaged 1 (e.g January 2009 - September 2013):</label>
+            <input
+              type="text"
+              onChange={(e) => setYearsEngaged1(e.target.value)}
+              value={yearsEngaged1}
+            />
+
+            <label>Designation / Post Held 1:</label>
+            <input
+              type="text"
+              onChange={(e) => setPostHeld1(e.target.value)}
+              value={postHeld1}
+            />
+
+            <label>Employer Name 2:</label>
+            <input
+              type="text"
+              onChange={(e) => setEmployerName2(e.target.value)}
+              value={employerName2}
+            />
+
+            <label>Employer Address 2 (e.g Victoria Island, Lagos):</label>
+            <input
+              type="text"
+              onChange={(e) => setEmployerAddress2(e.target.value)}
+              value={employerAddress2}
+            />
+
+            <label>Years Engaged 2 (e.g January 2009 - September 2013):</label>
+            <input
+              type="text"
+              onChange={(e) => setYearsEngaged2(e.target.value)}
+              value={yearsEngaged2}
+            />
+
+            <label>Designation / Post Held 2:</label>
+            <input
+              type="text"
+              onChange={(e) => setPostHeld2(e.target.value)}
+              value={postHeld2}
+            />
+
+            <label>Employer Name 3:</label>
+            <input
+              type="text"
+              onChange={(e) => setEmployerName3(e.target.value)}
+              value={employerName3}
+            />
+
+            <label>Employer Address 3 (e.g Victoria Island, Lagos):</label>
+            <input
+              type="text"
+              onChange={(e) => setEmployerAddress3(e.target.value)}
+              value={employerAddress3}
+            />
+
+            <label>Years Engaged 3 (e.g January 2009 - September 2013):</label>
+            <input
+              type="text"
+              onChange={(e) => setYearsEngaged3(e.target.value)}
+              value={yearsEngaged3}
+            />
+
+            <label>Designation / Post Held 3:</label>
+            <input
+              type="text"
+              onChange={(e) => setPostHeld3(e.target.value)}
+              value={postHeld3}
+            />
+
+            {/* Section D  */}
+            <p>
+              <span className="sections">
+                SECTION D - STUDY ABROAD SERVICE REQUEST INFORMATION:{" "}
+              </span>
+              In this section, kindly specify some critical information about
+              your service request. If your option doesn't appear on the list,
+              please select ''other'' and provide your customized response.
+            </p>
+
+            <label>Requested Level of Study Abroad:</label>
+            <div className="radioinput-form">
+              <div>
+                <input
+                  name="studylevel"
+                  onChange={(e) => setStudyLevel(e.target.value)}
+                  checked={
+                    studyLevel ===
+                    "Post Doctoral Research Assistantships or Fellowships"
+                  }
+                  type="radio"
+                  value="Post Doctoral Research Assistantships or Fellowships"
+                />
+                Post Doctoral Research Assistantships or Fellowships
+              </div>
+
+              <div>
+                <input
+                  name="studylevel"
+                  onChange={(e) => setStudyLevel(e.target.value)}
+                  checked={
+                    studyLevel ===
+                    "Doctorate Degree or Doctor of Philosophy, PhD"
+                  }
+                  type="radio"
+                  value="Doctorate Degree or Doctor of Philosophy, PhD"
+                />
+                Doctorate Degree or Doctor of Philosophy, PhD
+              </div>
+
+              <div>
+                <input
+                  name="studylevel"
+                  onChange={(e) => setStudyLevel(e.target.value)}
+                  checked={studyLevel === "Masters Degree"}
+                  type="radio"
+                  value="Masters Degree"
+                />
+                Masters Degree
+              </div>
+
+              <div>
+                <input
+                  name="studylevel"
+                  onChange={(e) => setStudyLevel(e.target.value)}
+                  checked={studyLevel === "Bachelors Degree"}
+                  type="radio"
+                  value="Bachelors Degree"
+                />
+                Bachelors Degree
+              </div>
+
+              <div>
+                <input
+                  name="studylevel"
+                  onChange={(e) => setStudyLevel(e.target.value)}
+                  checked={studyLevel === "Post Graduate Diploma"}
+                  type="radio"
+                  value="Post Graduate Diploma"
+                />
+                Post Graduate Diploma
+              </div>
+
+              <div>
+                <input
+                  name="studylevel"
+                  onChange={(e) => setStudyLevel(e.target.value)}
+                  checked={
+                    studyLevel === "Undergraduate Diploma or Certificate"
+                  }
+                  type="radio"
+                  value="Undergraduate Diploma or Certificate"
+                />
+                Undergraduate Diploma or Certificate
+              </div>
+            </div>
+
+            <label>Requested or Preferred Choice of Course:</label>
+            <input
+              type="text"
+              onChange={(e) => setCourseChoice(e.target.value)}
+              value={courseChoice}
+            />
+
+            <label>
+              Preferred Country(ies) are you Applying To (if applicable):
+            </label>
+            <input
+              type="text"
+              onChange={(e) => setPreferredCountry(e.target.value)}
+              value={preferredCountry}
+            />
+
+            {/* Section E  */}
+            <p>
+              <span className="sections">
+                SECTION E - TRAVEL HISTORY & OTHER DETAILS:
+              </span>
+              In this section, kindly give us detailed information about your
+              travel history as applicable. If the questions asked don't
+              describe your situation, kindly type "NOT APPLICABLE" as your
+              response.
+            </p>
+
+            <label>
+              Travel History (Please, list all the countries you travelled to in
+              the last ten (10) years):
+            </label>
+            <input
+              type="text"
+              onChange={(e) => setTravelHistory(e.target.value)}
+              value={travelHistory}
+            />
+
+            <label>
+              Denial History (Please, list all the countries you travelled to in
+              the last ten (10) years):
+            </label>
+            <input
+              type="text"
+              onChange={(e) => setDenialHistory(e.target.value)}
+              value={denialHistory}
+            />
+
+            <label>
+              How much are you budgeting for this entire service and study
+              abroad trip?:
+            </label>
+            <input
+              type="text"
+              onChange={(e) => setTripBudget(e.target.value)}
+              value={tripBudget}
+            />
+
+            <label> Who is sponsoring you for your study abroad? </label>
+            <div className="radioinput-form">
+              <div>
+                <input
+                  name="sponsor"
+                  onChange={(e) => setSponsor(e.target.value)}
+                  checked={
+                    sponsor === "I am sponsoring only myself for this trip"
+                  }
+                  type="radio"
+                  value="I am sponsoring only myself for this trip"
+                />
+                I am sponsoring only myself for this trip
+              </div>
+
+              <div>
+                <input
+                  name="sponsor"
+                  onChange={(e) => setSponsor(e.target.value)}
+                  checked={
+                    sponsor ===
+                    "I am sponsoring myself and spouse for this trip"
+                  }
+                  type="radio"
+                  value="I am sponsoring myself and spouse for this trip"
+                />
+                I am sponsoring myself and spouse for this trip
+              </div>
+
+              <div>
+                <input
+                  name="sponsor"
+                  onChange={(e) => setSponsor(e.target.value)}
+                  checked={
+                    sponsor ===
+                    "I am sponsoring myself and family for this trip"
+                  }
+                  type="radio"
+                  value="I am sponsoring myself and family for this trip"
+                />
+                I am sponsoring myself and family for this trip
+              </div>
+
+              <div>
+                <input
+                  name="sponsor"
+                  onChange={(e) => setSponsor(e.target.value)}
+                  checked={
+                    sponsor ===
+                    "I am sponsoring myself and someone else for this trip"
+                  }
+                  type="radio"
+                  value="I am sponsoring myself and someone else for this trip"
+                />
+                I am sponsoring myself and someone else for this trip
+              </div>
+
+              <div>
+                <input
+                  name="sponsor"
+                  onChange={(e) => setSponsor(e.target.value)}
+                  checked={sponsor === "Someone is sponsoring me for this trip"}
+                  type="radio"
+                  value="Someone is sponsoring me for this trip"
+                />
+                Someone is sponsoring me for this trip
+              </div>
+
+              <div>
+                <input
+                  name="sponser"
+                  onChange={(e) => setSponsor(e.target.value)}
+                  checked={
+                    sponsor === "My company is sponsoring me for this trip"
+                  }
+                  type="radio"
+                  value="My company is sponsoring me for this trip"
+                />
+                My company is sponsoring me for this trip
+              </div>
+            </div>
+
+            <label>
+              Are you planning to travel together with someone for this trip?
+            </label>
+            <input
+              type="text"
+              onChange={(e) => setTravelPartner(e.target.value)}
+              value={travelPartner}
+            />
+
+            <label>
+              If your response for the above question is YES, please kindly list
+              the accompany person(s) details (name & phone number):
+            </label>
+            <input
+              type="text"
+              onChange={(e) => setTravelPartnerList(e.target.value)}
+              value={travelPartnerList}
+            />
+
+            <label>
+              Are you able to provide your own personal or sponsor/company proof
+              of fund for your study abroad?
+            </label>
+            <input
+              type="text"
+              onChange={(e) => setSponsorProvide(e.target.value)}
+              value={sponsorProvide}
+            />
+
+            <label>
+              If your response to the above question is NO, please, kindly give
+              details of professional assistance needed for your proof of fund:
+            </label>
+            <input
+              type="text"
+              onChange={(e) => setProofOfFunds(e.target.value)}
+              value={proofOfFunds}
+            />
+
+            <label >How did you hear about us:</label>
+            <div className="radioinput-form">
+              <div>
+                <input
+                  name="howyouheard"
+                  onChange={(e) => setHowYouHeard(e.target.value)}
+                  checked={
+                    howYouHeard ===
+                    "From our Company Website"
+                  }
+                  type="radio"
+                  value="From our Company Website"
+                />
+                From our Company Website
+              </div>
+
+              <div>
+                <input
+                  name="howyouheard"
+                  onChange={(e) => setHowYouHeard(e.target.value)}
+                  checked={
+                    howYouHeard ===
+                    "From our Facebook Page"
+                  }
+                  type="radio"
+                  value= "From our Facebook Page"
+                />
+                From our Facebook Page
+              </div>
+
+              <div>
+                <input
+                  name="howyouheard"
+                  onChange={(e) => setHowYouHeard(e.target.value)}
+                  checked={howYouHeard === "From our Instagram Page"}
+                  type="radio"
+                  value="From our Instagram Page"
+                />
+                From our Instagram Page
+              </div>
+
+              <div>
+                <input
+                  name="howyouheard"
+                  onChange={(e) => setHowYouHeard(e.target.value)}
+                  checked={howYouHeard === "From our Twitter Page"}
+                  type="radio"
+                  value="From our Twitter Page"
+                />
+                From our Twitter Page
+              </div>
+
+              <div>
+                <input
+                  name="howyouheard"
+                  onChange={(e) => setHowYouHeard(e.target.value)}
+                  checked={howYouHeard === "From Industry Event / Exhibitions"}
+                  type="radio"
+                  value="From Industry Event / Exhibitions"
+                />
+                From Industry Event / Exhibitions
+              </div>
+
+              <div>
+                <input
+                  name="howyouheard"
+                  onChange={(e) => setHowYouHeard(e.target.value)}
+                  checked={
+                    howYouHeard === "From a Referral"
+                  }
+                  type="radio"
+                  value="From a Referral"
+                />
+                From a Referral
+              </div>
+            </div>
+
             <label className="termsandconditioncheck" htmlFor="">
               <input
                 checked={isChecked}
@@ -428,20 +916,27 @@ const Form = () => {
                 name=""
                 id=""
               />
-              <p>   I agree to the
-              <a
-                target="_blank"
-                href="https://efglobaltravels.com/terms-and-conditions"
-                className="termsandconditiontxt"
-              >
-                Terms and Conditions
-              </a>
-              of EF GLOBAL TRAVELS </p>
-            
+              <p>
+                {" "}
+                I agree to the
+                <a
+                  target="_blank"
+                  href="https://efglobaltravels.com/terms-and-conditions"
+                  className="termsandconditiontxt"
+                >
+                  Terms and Conditions
+                </a>
+                of EF GLOBAL TRAVELS{" "}
+              </p>
             </label>
 
-            {isChecked === false ? <p className="p-warning">Please check the box before submiting this form</p> : ""}
-            
+            {isChecked === false ? (
+              <p className="p-warning">
+                Please check the box before submiting this form
+              </p>
+            ) : (
+              ""
+            )}
 
             <p className="info-text">
               {" "}
