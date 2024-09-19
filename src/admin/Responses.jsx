@@ -24,7 +24,37 @@ const Responses = ({name, email, phonenumber, address, dob, maritalstatus, emplo
   travelPartnerList,
   sponsorProvide,
   proofOfFunds,
-  howYouHeard, }) => {
+  howYouHeard,
+
+  nationality,
+  placeOfBirth,
+  internationalPassportNumber,
+  dateOfIssuePassport,
+  expiryDate,
+  nin,
+  dateIssuedNin,
+  denialReasons,
+  emergencyContact,
+  emergencyContactPhoneNumber,
+  emergencyContactAddress,
+  emergencyContactRelationship,
+  parentFullName,
+  parentRelationship,
+  parentDob,
+  parentCountry,
+  parentCuurentOccupation,
+  parentFullName2,
+  parentRelationship2,
+  parentDob2,
+  parentCountry2,
+  parentCuurentOccupation2,
+  siblingsInfo,
+  spouseFullName,
+  spouseMaidenName,
+  spouseChangeOfName,
+  spouseGender,
+  spouseDob,
+  travelChoice,}) => {
 
   return (
     <div className='responses-div'>
@@ -72,6 +102,17 @@ const Responses = ({name, email, phonenumber, address, dob, maritalstatus, emplo
             <p><span>Sponsorship:</span> {sponsorProvide} </p>
             <p><span>Proof of funds:</span> {proofOfFunds} </p>
             <p><span>How you heard:</span> {howYouHeard} </p>
+            <p><span>Nationality:</span> {nationality} </p>
+            <p><span>Place of Birth:</span> {placeOfBirth} </p>
+            <p><span>International Passport Number:</span> {internationalPassportNumber} </p>
+            <p><span>Date of Issue Passport:</span> {dateOfIssuePassport} </p>
+            <p><span>Expiry date Passport:</span> {expiryDate} </p>
+            <p><span>NIN:</span> {nin} </p>
+            <p><span>Date Issued NIN:</span> {dateIssuedNin} </p>
+            <p><span>Emergency Contact Name:</span> {emergencyContact} </p>
+            <p><span>Emergency Contact Phone Number:</span> {emergencyContactPhoneNumber} </p>
+            <p><span>Emergency Contact Address:</span> {emergencyContactAddress} </p>
+            <p><span>Emergency Contact Address:</span> {emergencyContactAddress} </p>
 
     </div>
   )

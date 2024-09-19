@@ -7,6 +7,14 @@ import Loader from "./Loader";
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [nationality, setNationality] = useState("");
+  const [placeOfBirth, setPlaceOfBirth] = useState("");
+  const [internationalPassportNumber, setInternationalPassportNumber] =
+    useState("");
+  const [dateOfIssuePassport, setDateOfIssuePassport] = useState("");
+  const [expiryDate, setExpiryDate] = useState("");
+  const [nin, setNin] = useState("");
+  const [dateIssuedNin, setDateIssuedNin] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [address, setAddress] = useState("");
   const [dob, setDob] = useState("");
@@ -43,6 +51,7 @@ const Form = () => {
   const [preferredCountry, setPreferredCountry] = useState("");
   const [travelHistory, setTravelHistory] = useState("");
   const [denialHistory, setDenialHistory] = useState("");
+  const [denialReasons, setDenialReasons] = useState("");
   const [tripBudget, setTripBudget] = useState("");
   const [sponsor, setSponsor] = useState("");
   const [travelPartner, setTravelPartner] = useState("");
@@ -50,6 +59,29 @@ const Form = () => {
   const [sponsorProvide, setSponsorProvide] = useState("");
   const [proofOfFunds, setProofOfFunds] = useState("");
   const [howYouHeard, setHowYouHeard] = useState("");
+  const [emergencyContact, setEmergencyContact] = useState("");
+  const [emergencyContactPhoneNumber, setEmergencyContactPhoneNumber] =
+    useState("");
+  const [emergencyContactAddress, setEmergencyContactAddress] = useState("");
+  const [emergencyContactRelationship, setEmergencyContactRelationship] =
+    useState("");
+  const [parentFullName, setParentFullName] = useState("");
+  const [parentRelationship, setParentRelationship] = useState("");
+  const [parentDob, setParentDob] = useState("");
+  const [parentCountry, setParentCountry] = useState("");
+  const [parentCuurentOccupation, setParentCuurentOccupation] = useState("");
+  const [parentFullName2, setParentFullName2] = useState("");
+  const [parentRelationship2, setParentRelationship2] = useState("");
+  const [parentDob2, setParentDob2] = useState("");
+  const [parentCountry2, setParentCountry2] = useState("");
+  const [parentCuurentOccupation2, setParentCuurentOccupation2] = useState("");
+  const [siblingsInfo, setSiblingsInfo] = useState("");
+  const [spouseFullName, setSpouseFullName] = useState("");
+  const [spouseMaidenName, setSpouseMaidenName] = useState("");
+  const [spouseChangeOfName, setSpouseChangeOfName] = useState("");
+  const [spouseGender, setSpouseGender] = useState("");
+  const [spouseDob, setSpouseDob] = useState("");
+  const [travelChoice, setTravelChoice] = useState("");
 
   // for checkbox
   const [isChecked, setIsChecked] = useState(false);
@@ -106,6 +138,36 @@ const Form = () => {
       sponsorProvide: sponsorProvide,
       proofOfFunds: proofOfFunds,
       howYouHeard: howYouHeard,
+
+  nationality: nationality,
+  placeOfBirth: placeOfBirth,
+  internationalPassportNumber: internationalPassportNumber,
+  dateOfIssuePassport: dateOfIssuePassport,
+  expiryDate: expiryDate,
+  nin: nin,
+  dateIssuedNin: dateIssuedNin,
+  denialReasons: denialReasons,
+  emergencyContact: emergencyContact,
+  emergencyContactPhoneNumber: emergencyContactPhoneNumber,
+  emergencyContactAddress:emergencyContactAddress,
+  emergencyContactRelationship: emergencyContactRelationship,
+  parentFullName: parentFullName,
+  parentRelationship: parentRelationship,
+  parentDob: parentDob,
+  parentCountry: parentCountry,
+  parentCuurentOccupation: parentCuurentOccupation,
+  parentFullName2: parentFullName2,
+  parentRelationship2: parentRelationship2,
+  parentDob2: parentDob2,
+  parentCountry2: parentCountry2,
+  parentCuurentOccupation2: parentCuurentOccupation2,
+  siblingsInfo: siblingsInfo,
+  spouseFullName: spouseFullName,
+  spouseMaidenName: spouseMaidenName,
+  spouseChangeOfName: spouseChangeOfName,
+  spouseGender: spouseGender,
+  spouseDob: spouseDob, 
+  travelChoice: travelChoice,
     };
 
     const response = axios
@@ -116,54 +178,84 @@ const Form = () => {
         }
       })
       .catch((err) => console.log(err));
-      
-      // if the data has been succesfuully sent then clear the boxes
-      setName("");
-      setPhoneNumber("");
-      setEmail("");
-      setAddress("");
-      setDob("");
-      setMaritalStatus("");
-      setEmploymentStatus("");
-      setOccupation("");
-      setHighestQualification("");
-      setInstitution1("");
-      setYearsAttended1("");
-      setCourse1("");
-      setQualification1("");
-      setInstitution2("");
-      setYearsAttended2("");
-      setCourse2("");
-      setQualification2("");
-      setInstitution3("");
-      setYearsAttended3("");
-      setCourse3("");
-      setQualification3("");
-      setEmployerName1("");
-      setEmployerAddress1("");
-      setYearsEngaged1("");
-      setPostHeld1("");
-      setEmployerName2("");
-      setEmployerAddress2("");
-      setYearsEngaged2("");
-      setPostHeld2("");
-      setEmployerName3("");
-      setEmployerAddress3("");
-      setYearsEngaged3("");
-      setPostHeld3("");
-      setStudyLevel("")
-      setCourseChoice("")
-      setPreferredCountry("")
-      setTravelHistory("")
-      setDenialHistory("")
-      setTripBudget("")
-      setSponsor("")
-      setTravelPartner("")
-      setTravelPartnerList("")
-      setSponsorProvide("")
-      setProofOfFunds("")
-      setHowYouHeard("")
-    };
+
+    // if the data has been succesfuully sent then clear the boxes
+    setName("");
+    setPhoneNumber("");
+    setEmail("");
+    setAddress("");
+    setDob("");
+    setMaritalStatus("");
+    setEmploymentStatus("");
+    setOccupation("");
+    setHighestQualification("");
+    setInstitution1("");
+    setYearsAttended1("");
+    setCourse1("");
+    setQualification1("");
+    setInstitution2("");
+    setYearsAttended2("");
+    setCourse2("");
+    setQualification2("");
+    setInstitution3("");
+    setYearsAttended3("");
+    setCourse3("");
+    setQualification3("");
+    setEmployerName1("");
+    setEmployerAddress1("");
+    setYearsEngaged1("");
+    setPostHeld1("");
+    setEmployerName2("");
+    setEmployerAddress2("");
+    setYearsEngaged2("");
+    setPostHeld2("");
+    setEmployerName3("");
+    setEmployerAddress3("");
+    setYearsEngaged3("");
+    setPostHeld3("");
+    setStudyLevel("");
+    setCourseChoice("");
+    setPreferredCountry("");
+    setTravelHistory("");
+    setDenialHistory("");
+    setTripBudget("");
+    setSponsor("");
+    setTravelPartner("");
+    setTravelPartnerList("");
+    setSponsorProvide("");
+    setProofOfFunds("");
+    setHowYouHeard("");
+
+    setNationality("");
+    setPlaceOfBirth("");
+    setInternationalPassportNumber("");
+    setDateOfIssuePassport("");
+    setExpiryDate("");
+    setNin("");
+    setDateIssuedNin("");
+    setDenialReasons("");
+    setEmergencyContact("");
+    setEmergencyContactPhoneNumber("");
+    setEmergencyContactAddress("");
+    setEmergencyContactRelationship("");
+    setParentFullName("");
+    setParentRelationship("");
+    setParentDob("");
+    setParentCountry("");
+    setParentCuurentOccupation("");
+    setParentFullName2("");
+    setParentRelationship2("");
+    setParentDob2("");
+    setParentCountry2("");
+    setParentCuurentOccupation2("");
+    setSiblingsInfo("");
+    setSpouseFullName("");
+    setSpouseMaidenName("");
+    setSpouseChangeOfName("");
+    setSpouseGender("");
+    setSpouseDob(""); 
+    setTravelChoice("");
+  };
 
   const payWithPaystack = (e) => {
     e.preventDefault();
@@ -239,6 +331,55 @@ const Form = () => {
               onChange={(e) => setPhoneNumber(e.target.value)}
               type="text"
               value={phoneNumber}
+            />
+
+            <label>Nationality:</label>
+            <input
+              onChange={(e) => setNationality(e.target.value)}
+              type="text"
+              value={nationality}
+            />
+
+            <label>Place of Birth:</label>
+            <input
+              onChange={(e) => setPlaceOfBirth(e.target.value)}
+              type="text"
+              value={placeOfBirth}
+            />
+
+            <label>International Passport Number:</label>
+            <input
+              onChange={(e) => setInternationalPassportNumber(e.target.value)}
+              type="text"
+              value={internationalPassportNumber}
+            />
+
+            <label>Date of Issue:</label>
+            <input
+              onChange={(e) => setDateOfIssuePassport(e.target.value)}
+              type="text"
+              value={dateOfIssuePassport}
+            />
+
+            <label>Expiry Date:</label>
+            <input
+              onChange={(e) => setExpiryDate(e.target.value)}
+              type="text"
+              value={expiryDate}
+            />
+
+            <label>Nin:</label>
+            <input
+              onChange={(e) => setNin(e.target.value)}
+              type="text"
+              value={nin}
+            />
+
+            <label>Date Issued:</label>
+            <input
+              onChange={(e) => setDateIssuedNin(e.target.value)}
+              type="text"
+              value={dateIssuedNin}
             />
 
             <label>Address:</label>
@@ -358,6 +499,159 @@ const Form = () => {
               onChange={(e) => setOccupation(e.target.value)}
               value={occupation}
             />
+
+            <label>Emergency Contact Name:</label>
+            <input
+              type="text"
+              onChange={(e) => setEmergencyContact(e.target.value)}
+              value={emergencyContact}
+            />
+
+            <label>Emergency Contact Phone Number:</label>
+            <input
+              type="text"
+              onChange={(e) => setEmergencyContactPhoneNumber(e.target.value)}
+              value={emergencyContactPhoneNumber}
+            />
+
+            <label>Emergency Contact Address:</label>
+            <input
+              type="text"
+              onChange={(e) => setEmergencyContactAddress(e.target.value)}
+              value={emergencyContactAddress}
+            />
+
+            <label>Emergency Contact Relationship:</label>
+            <input
+              type="text"
+              onChange={(e) => setEmergencyContactRelationship(e.target.value)}
+              value={emergencyContactRelationship}
+            />
+
+            <label>Parent Full Name:</label>
+            <input
+              type="text"
+              onChange={(e) => setParentFullName(e.target.value)}
+              value={parentFullName}
+            />
+
+            <label>Parent Relationship:</label>
+            <input
+              type="text"
+              onChange={(e) => setParentRelationship(e.target.value)}
+              value={parentRelationship}
+            />
+
+            <label>Parent Date of Birth, with Year, Month and Day:</label>
+            <input
+              type="date"
+              onChange={(e) => setParentDob(e.target.value)}
+              value={parentDob}
+            />
+
+            <label>Parent Country and Territory/City of Birth:</label>
+            <input
+              type="text"
+              onChange={(e) => setParentCountry(e.target.value)}
+              value={parentCountry}
+            />
+
+            <label>Parent Current Occupation:</label>
+            <input
+              type="text"
+              onChange={(e) => setParentCuurentOccupation(e.target.value)}
+              value={parentCuurentOccupation}
+            />
+
+            <label>Parent Full Name:</label>
+            <input
+              type="text"
+              onChange={(e) => setParentFullName2(e.target.value)}
+              value={parentFullName2}
+            />
+
+            <label>Parent Relationship:</label>
+            <input
+              type="text"
+              onChange={(e) => setParentRelationship2(e.target.value)}
+              value={parentRelationship2}
+            />
+
+            <label>Parent Date of Birth, with Year, Months and Day:</label>
+            <input
+              type="text"
+              onChange={(e) => setParentDob2(e.target.value)}
+              value={parentDob2}
+            />
+
+            <label>Parent Country and Territory/City of Birth:</label>
+            <input
+              type="text"
+              onChange={(e) => setParentCountry2(e.target.value)}
+              value={parentCountry2}
+            />
+
+            <label>Parent Current Occupation:</label>
+            <input
+              type="text"
+              onChange={(e) => setParentCuurentOccupation2(e.target.value)}
+              value={parentCuurentOccupation2}
+            />
+
+            <label>
+              Siblings Info: Provide the following information for each of your
+              siblings (FULL NAME, RELATIONSHIP, DATE OF BIRTH, COUNTRY OF
+              ORIGIN, CURRENT OCCUPATION)
+            </label>
+            <textarea
+              type="text"
+              onChange={(e) => setSiblingsInfo(e.target.value)}
+              value={siblingsInfo}
+            />
+
+            <label>Spouse Full Name:</label>
+            <input
+              type="text"
+              onChange={(e) => setSpouseFullName(e.target.value)}
+              value={spouseFullName}
+            />
+
+            <label>Spouse Maiden Name (If applicable):</label>
+            <input
+              type="text"
+              onChange={(e) => setSpouseMaidenName(e.target.value)}
+              value={spouseMaidenName}
+            />
+
+            <label>Spouse Change of Name (If any):</label>
+            <input
+              type="text"
+              onChange={(e) => setSpouseChangeOfName(e.target.value)}
+              value={spouseChangeOfName}
+            />
+
+            <label>Spouse Gender:</label>
+            <input
+              type="text"
+              onChange={(e) => setSpouseGender(e.target.value)}
+              value={spouseGender}
+            />
+
+            <label>Spouse Date of Birth:</label>
+            <input
+              type="text"
+              onChange={(e) => setSpouseDob(e.target.value)}
+              value={spouseDob}
+            />
+
+            <label>Travel Type: (eg: Study, work, Visit or Others (Please Specify))</label>
+            <input
+              type="text"
+              onChange={(e) => setTravelChoice(e.target.value)}
+              value={travelChoice}
+            />
+
+
 
             <p>
               <span className="sections">SECTION B:</span>Please provide your
@@ -690,19 +984,23 @@ const Form = () => {
               value={travelHistory}
             />
 
-            <label>
-              Denial History (Please, list all the countries you travelled to in
-              the last ten (10) years):
-            </label>
+            <label>Have you been denied visa to any country before:</label>
             <input
               type="text"
               onChange={(e) => setDenialHistory(e.target.value)}
               value={denialHistory}
             />
 
+            <label>If you answered YES above, state the reason(s) for denial of each of the countries</label>
+            <textarea
+              type="text"
+              onChange={(e) => setDenialReasons(e.target.value)}
+              value={denialReasons}
+            />
+
             <label>
-              How much are you budgeting for this entire service and study
-              abroad trip?:
+              How much are you budgeting for your study? choose between $15,000
+              and $25,000:
             </label>
             <input
               type="text"
@@ -710,7 +1008,7 @@ const Form = () => {
               value={tripBudget}
             />
 
-            <label> Who is sponsoring you for your study abroad? </label>
+            <label> Who is sponsoring your study/trip abroad? </label>
             <div className="radioinput-form">
               <div>
                 <input
@@ -811,36 +1109,13 @@ const Form = () => {
               value={travelPartnerList}
             />
 
-            <label>
-              Are you able to provide your own personal or sponsor/company proof
-              of fund for your study abroad?
-            </label>
-            <input
-              type="text"
-              onChange={(e) => setSponsorProvide(e.target.value)}
-              value={sponsorProvide}
-            />
-
-            <label>
-              If your response to the above question is NO, please, kindly give
-              details of professional assistance needed for your proof of fund:
-            </label>
-            <input
-              type="text"
-              onChange={(e) => setProofOfFunds(e.target.value)}
-              value={proofOfFunds}
-            />
-
-            <label >How did you hear about us:</label>
+            <label>How did you hear about us:</label>
             <div className="radioinput-form">
               <div>
                 <input
                   name="howyouheard"
                   onChange={(e) => setHowYouHeard(e.target.value)}
-                  checked={
-                    howYouHeard ===
-                    "From our Company Website"
-                  }
+                  checked={howYouHeard === "From our Company Website"}
                   type="radio"
                   value="From our Company Website"
                 />
@@ -851,12 +1126,9 @@ const Form = () => {
                 <input
                   name="howyouheard"
                   onChange={(e) => setHowYouHeard(e.target.value)}
-                  checked={
-                    howYouHeard ===
-                    "From our Facebook Page"
-                  }
+                  checked={howYouHeard === "From our Facebook Page"}
                   type="radio"
-                  value= "From our Facebook Page"
+                  value="From our Facebook Page"
                 />
                 From our Facebook Page
               </div>
@@ -898,9 +1170,7 @@ const Form = () => {
                 <input
                   name="howyouheard"
                   onChange={(e) => setHowYouHeard(e.target.value)}
-                  checked={
-                    howYouHeard === "From a Referral"
-                  }
+                  checked={howYouHeard === "From a Referral"}
                   type="radio"
                   value="From a Referral"
                 />
