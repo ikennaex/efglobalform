@@ -63,6 +63,34 @@ const Responses = ({name, email, phonenumber, address, dob, maritalstatus, emplo
             <p><span>Phone Number:</span> {phonenumber}</p>
             <p className='extend-p'><span>Address:</span> {address}</p>
             <p><span>Date of Birth:</span> {dob}</p>
+            <p><span>Nationality:</span> {nationality} </p>
+            <p><span>Place of Birth:</span> {placeOfBirth} </p>
+            <p><span>International Passport Number:</span> {internationalPassportNumber} </p>
+            <p><span>Date of Issue Passport:</span> {dateOfIssuePassport} </p>
+            <p><span>Expiry date Passport:</span> {expiryDate} </p>
+            <p><span>NIN:</span> {nin} </p>
+            <p><span>Date Issued NIN:</span> {dateIssuedNin} </p>
+            <p><span>Emergency Contact Name:</span> {emergencyContact} </p>
+            <p><span>Emergency Contact Phone Number:</span> {emergencyContactPhoneNumber} </p>
+            <p><span>Emergency Contact Address:</span> {emergencyContactAddress} </p>
+            <p><span>Emergency Contact Relationship:</span> {emergencyContactRelationship} </p>
+            <p><span>Parent 1 Full Name:</span> {parentFullName } </p>
+            <p><span>Parent 1 Relationship:</span> {parentRelationship } </p>
+            <p><span>Parent 1 DOB:</span> {parentDob } </p>
+            <p><span>Parent 1 Country:</span> {parentCountry } </p>
+            <p><span>Parent 1 Current Occupation:</span> {parentCuurentOccupation } </p>
+            <p><span>Parent 2 Full Name:</span> {parentFullName2 } </p>
+            <p><span>Parent 2 Relationship:</span> {parentRelationship2 } </p>
+            <p><span>Parent 2 DOB:</span> {parentDob2 } </p>
+            <p><span>Parent 2 Country:</span> {parentCountry2 } </p>
+            <p><span>Parent 2 Current Occupation:</span> {parentCuurentOccupation2 } </p>
+            <p><span>Siblings Info:</span> {siblingsInfo } </p>
+            <p><span>Spouse Full Name:</span> {spouseFullName } </p>
+            <p><span>Spouse Maiden Name:</span> {spouseMaidenName } </p>
+            <p><span>Spouse Change of Name:</span> {spouseChangeOfName } </p>
+            <p><span>Spouse Gender:</span> {spouseGender } </p>
+            <p><span>Spouse DOB:</span> {spouseDob } </p>
+            <p><span>Travel Choice:</span> {travelChoice } </p>
             <p><span>Marital Status:</span> {maritalstatus}</p>
             <p><span>Employment Status:</span> {employmentstatus}</p>
             <p><span>Occupation:</span> {occupation} </p>
@@ -95,6 +123,7 @@ const Responses = ({name, email, phonenumber, address, dob, maritalstatus, emplo
             <p><span>Preferred Country:</span> {preferredCountry} </p>
             <p><span>Travel History:</span> {travelHistory} </p>
             <p><span>Denial History:</span> {denialHistory} </p>
+            <p><span>Denial Reasons:</span> {denialReasons } </p>
             <p><span>Trip budget:</span> {tripBudget} </p>
             <p><span>Sponsor:</span> {sponsor} </p>
             <p><span>Are you travelling with anyone:</span> {travelPartner} </p>
@@ -102,17 +131,6 @@ const Responses = ({name, email, phonenumber, address, dob, maritalstatus, emplo
             <p><span>Sponsorship:</span> {sponsorProvide} </p>
             <p><span>Proof of funds:</span> {proofOfFunds} </p>
             <p><span>How you heard:</span> {howYouHeard} </p>
-            <p><span>Nationality:</span> {nationality} </p>
-            <p><span>Place of Birth:</span> {placeOfBirth} </p>
-            <p><span>International Passport Number:</span> {internationalPassportNumber} </p>
-            <p><span>Date of Issue Passport:</span> {dateOfIssuePassport} </p>
-            <p><span>Expiry date Passport:</span> {expiryDate} </p>
-            <p><span>NIN:</span> {nin} </p>
-            <p><span>Date Issued NIN:</span> {dateIssuedNin} </p>
-            <p><span>Emergency Contact Name:</span> {emergencyContact} </p>
-            <p><span>Emergency Contact Phone Number:</span> {emergencyContactPhoneNumber} </p>
-            <p><span>Emergency Contact Address:</span> {emergencyContactAddress} </p>
-            <p><span>Emergency Contact Address:</span> {emergencyContactAddress} </p>
 
     </div>
   )

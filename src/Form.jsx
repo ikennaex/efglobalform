@@ -604,6 +604,7 @@ const Form = () => {
               ORIGIN, CURRENT OCCUPATION)
             </label>
             <textarea
+            rows={30}
               type="text"
               onChange={(e) => setSiblingsInfo(e.target.value)}
               value={siblingsInfo}
@@ -993,6 +994,7 @@ const Form = () => {
 
             <label>If you answered YES above, state the reason(s) for denial of each of the countries</label>
             <textarea
+            rows={20}
               type="text"
               onChange={(e) => setDenialReasons(e.target.value)}
               value={denialReasons}
